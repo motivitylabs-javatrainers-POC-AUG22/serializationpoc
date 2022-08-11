@@ -109,6 +109,7 @@ public class SerializaionCrudOperation {
         System.out.println("object entered into file");
     }
     public static List<Student> objectRetriving() throws SQLException, IOException, ClassNotFoundException {
+        objectStateTransfer();
         File file=new File(str);
         List<Student> list=new ArrayList<>();
         if(file.length()==0){
@@ -119,7 +120,6 @@ public class SerializaionCrudOperation {
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             list = (List) objectInputStream.readObject();
             System.out.println("object readed from the file");
-            objectInputStream.close();
         }
         return list;
     }
