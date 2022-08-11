@@ -7,12 +7,22 @@ class Student implements Serializable {
     private String name;
     private String branch;
     private String gender;
+    private transient String password;
 
-    public Student(int id, String name, String branch, String gender) {
+    public Student(int id, String name, String branch, String gender,String password) {
         this.id = id;
         this.name = name;
         this.branch = branch;
         this.gender = gender;
+        this.password=password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Student() {
@@ -62,6 +72,7 @@ class Student implements Serializable {
                 ", name='" + name + '\'' +
                 ", branch='" + branch + '\'' +
                 ", gender='" + gender + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

@@ -33,6 +33,7 @@ public class SerializaionCrudOperation {
             student.setName(rs.getString(2));
             student.setBranch(rs.getString(3));
             student.setGender(rs.getString(4));
+            student.setPassword(rs.getString(5));
             li.add(student);
         }
         return li;
@@ -65,14 +66,15 @@ public class SerializaionCrudOperation {
         }
         return result;
     }
-    public static String insertStudent(int id,String name,String branch,String gender,Connection con) throws SQLException, IOException
+    public static String insertStudent(int id,String name,String branch,String gender,String passowrd,Connection con) throws SQLException, IOException
     {
         String result;
-        PreparedStatement ps=con.prepareStatement("insert into student values(?,?,?,?)");
+        PreparedStatement ps=con.prepareStatement("insert into student values(?,?,?,?,?)");
         ps.setInt(1,id);
         ps.setString(2,name);
         ps.setString(3,branch);
         ps.setString(4,gender);
+        ps.setString(5,passowrd);
         int a=ps.executeUpdate();
         if(a==1) {
             result="inserted successful";

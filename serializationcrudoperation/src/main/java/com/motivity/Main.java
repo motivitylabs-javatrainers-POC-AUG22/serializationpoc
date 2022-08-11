@@ -26,7 +26,9 @@ public class Main {
                     String branch = sc.next();
                     System.out.println("enter gender");
                     String gender = sc.next();
-                    System.out.println(SerializaionCrudOperation.insertStudent(id, name, branch, gender, con));
+                    System.out.println("enter password");
+                    String password = sc.next();
+                    System.out.println(SerializaionCrudOperation.insertStudent(id, name, branch, gender,password, con));
                     System.out.println("1.insert 2.deletebyid 3.updatebyname 4selectbyid 5.showall");
                     System.out.println("enter your choice");
                     choice = sc.nextInt();
